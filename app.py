@@ -59,7 +59,10 @@ def visualization():
         html.Br(),
         # <-----------Select Features on which size of gps points will depend ---------->
         dbc.FormGroup([
-            dbc.Label("Choose the EPS value for DBSCAN Algorithm"),
+            # dbc.Label(""),
+            html.H4(children='Choose the EPS value for DBSCAN Algorithm'),
+            html.H6(children='(Based on EPS value number of clusters will change)'),
+            html.Br(),
             dcc.Slider(id="eps_value", min=0.1, max=1, step=0.1,
                        value=0.2,
                        marks={0.1: '0.1', 0.2: '0.2', 0.3: '0.3', 0.4: '0.4', 0.5: '0.5', 0.6: '0.6', 0.7: '0.7',
@@ -86,7 +89,7 @@ dataframe = pre_processing()
 df = dataframe.copy()
 numeric_features = df[['accident_severity', 'speed_limit', 'urban_or_rural_area']]
 app.layout = dbc.Container([
-    html.H1(children='Traffic Accidents in UK', style={'text-align': 'center'}),
+    html.H1(children='Analysis of Traffic Accidents occurred in UK', style={'text-align': 'center'}),
     html.Hr(),
     visualization()
 ])
@@ -124,7 +127,6 @@ def map_options(selected_month, selected_column):
                     'lon': -4
                 },
                 'zoom': 3.8,
-                'style': 'dark',
             },
             'margin': {'t': 0,
                        'b': 0,
