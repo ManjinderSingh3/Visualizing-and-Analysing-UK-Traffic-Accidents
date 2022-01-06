@@ -26,10 +26,8 @@ def pre_processing():
     dataset['Day'] = pd.DatetimeIndex(dataset['date']).day
     dataset['Month'] = pd.DatetimeIndex(dataset['date']).month
     dataset['Year'] = pd.DatetimeIndex(dataset['date']).year
-    # print(dataset)
     return dataset
 
 
 if __name__ == "__main__":
     pre_processing()
-    print("Successful")
