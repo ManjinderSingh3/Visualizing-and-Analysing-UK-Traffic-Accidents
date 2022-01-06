@@ -174,7 +174,6 @@ def map_options(selected_month, selected_column):
                     'lon': -4
                 },
                 'zoom': 3.8,
-                'style': 'dark',
             },
             'margin': {'t': 0,
                        'b': 0,
